@@ -8,7 +8,11 @@ Twitterで有名な[theoremoon](https://github.com/theoremoon)さんの[シェ�
 
 ......といっても自力でDockerコンテナを動かしているわけではなく[jiro4989](https://github.com/jiro4989)さんの[websh](https://github.com/jiro4989/websh)のAPIを叩くだけ．
 
-一応メンションなどのMessageFormatの文字数によるズレをなるべく吸収するようにしました．
+
+## Usage
+- このbotへのメンションに反応してシェルコマンドを実行します．またその際このbotへのメンションはコードから削除されます．
+- メンションなどのMessageFormatの文字数によるズレをなるべく吸収し，表示に近い字幅でシェルを実行します．
+- コードブロック (\`\`\` ~ \`\`\`) が存在する場合，１つ目のコードブロックの中身のみをコードとして認識します．
 
 
 ## Licence
