@@ -2,3 +2,4 @@ run_.py
 shbot.jpg
 __pycache__/
 .vscode/
+venv/
