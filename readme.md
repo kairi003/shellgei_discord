@@ -13,6 +13,14 @@ Twitterで有名な[theoremoon](https://github.com/theoremoon)さんの[シェ�
 - このbotへのメンションに反応してシェルコマンドを実行します．またその際このbotへのメンションはコードから削除されます．
 - メンションなどのMessageFormatの文字数によるズレをなるべく吸収し，表示に近い字幅でシェルを実行します．
 - コードブロック (\`\`\` ~ \`\`\`) が存在する場合，１つ目のコードブロックの中身のみをコードとして認識します．
+- 30秒以上の処理はタイムアウトします．
+- その他の仕様は本家のリポジトリか[こちら](https://furutsuki.hatenablog.com/entry/2018/07/13/221806)を御覧ください．
+
+
+## Link
+- [シェル芸bot (theoremoon)](https://github.com/theoremoon/ShellgeiBot): 本家大本
+- [websh (jiro4989)](https://github.com/jiro4989/websh): API利用先
+- [今の所判明しているシェル芸botの仕様](https://furutsuki.hatenablog.com/entry/2018/07/13/221806): Twitterのシェル芸botの仕様
 
 
 ## Licence
