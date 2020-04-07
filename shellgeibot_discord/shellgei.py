@@ -78,24 +78,28 @@ def shellgei(message):
             content = m[1]
         else:
             content = m[2]
+    content = content.lstrip()
 
     formats = MessageFormats(message)
     content = formats.content_repl(content)
 
     b64_images = [base64.b64encode(res.content) for att in message.attachments if (res := requests.get(att.url)).ok]
-    res = requests.post('https://websh.jiro4989.com/api/shellgei', json.dumps({'code': content, 'images': b64_images}), timeout=(9, 30))
+    payload = json.dumps({'code': content, 'images': b64_images})
+    # print(payload)
+    res = requests.post('https://websh.jiro4989.com/api/shellgei', payload, timeout=(9, 30))
     res.raise_for_status()
     res_json = json.loads(res.content)
+    # print(res_json)
 
     if res_json['status'] != 0:
         raise APIError(res_json['system_message'])
+    
+    if not res_json['stdout'] and not res_json['images'] and res_json['stderr']:
+        raise ShellExecuteError(res_json['stderr'])
 
     stdout = formats.content_mention(res_json['stdout']) if res_json['stdout'] else None
     files = [discord.File(io.BytesIO(b_img), filename=f'{i}.{utils.imghdr.what(None, b_img)}')
             for i, img in enumerate(res_json['images'])
             if (b_img := base64.b64decode(img['image']))]
-    
-    if not stdout and not files and res_json['stderr']:
-        raise ShellExecuteError(res_json['stderr'])
     
     return (stdout, files)

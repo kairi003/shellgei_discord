@@ -19,7 +19,7 @@ async def on_message(message: discord.Message) -> None:
             stdout, files = shellgei(message)
             await message.channel.send(stdout, files=files)
         except Exception as e:
-            await message.channel.send(f'**Error**\n{type(e)}\n{str(e)}')
+            await message.channel.send(f'**Error**\n`{type(e)}`\n```{str(e)}```')
     return
 
 client.run(os.environ['TOKEN'])
