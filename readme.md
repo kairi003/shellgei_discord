@@ -1,4 +1,4 @@
-shellgeibot_discord
+shellgei_discord
 ====
 
 [シェル芸bot](https://github.com/theoremoon/ShellgeiBot)をDiscordでも．
