@@ -17,6 +17,10 @@ Twitterで有名な[theoremoon](https://github.com/theoremoon)さんの[シェ�
 - その他の仕様は本家のリポジトリか[こちら](https://furutsuki.hatenablog.com/entry/2018/07/13/221806)を御覧ください．
 
 
+## Install
+[こちらのURL](https://discordapp.com/api/oauth2/authorize?client_id=695979014497763431&permissions=0&scope=bot)よりサーバーに追加できます．
+
+
 ## Link
 - [シェル芸bot (theoremoon)](https://github.com/theoremoon/ShellgeiBot): 本家大本
 - [websh (jiro4989)](https://github.com/jiro4989/websh): API利用先
