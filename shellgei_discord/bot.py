@@ -8,7 +8,7 @@ from .shellgei import shellgei
 
 @client.event
 async def on_ready():
-    print(client.user)
+    print('START: ', client.user)
 
 @client.event
 async def on_message(message: discord.Message) -> None:
