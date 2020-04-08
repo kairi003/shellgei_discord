@@ -83,7 +83,7 @@ def shellgei(message):
     formats = MessageFormats(message)
     content = formats.content_repl(content)
 
-    b64_images = [base64.b64encode(res.content) for att in message.attachments if (res := requests.get(att.url)).ok]
+    b64_images = [base64.b64encode(res.content).decode() for att in message.attachments if (res := requests.get(att.url)).ok]
     payload = json.dumps({'code': content, 'images': b64_images})
     # print(payload)
     res = requests.post('https://websh.jiro4989.com/api/shellgei', payload, timeout=(9, 30))
